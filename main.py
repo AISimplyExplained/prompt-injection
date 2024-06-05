@@ -75,7 +75,7 @@ async def _resp_async_generator(text_resp: str):
     yield "data: [DONE]\n\n"
 
 
-@app.post("/chat/completions")
+@app.post("/v1/chat/completions")
 async def chat_completions(request: ChatCompletionRequest):
     if request.messages:
         prompt = tokenizer.apply_chat_template(request.messages, tokenize=False, add_generation_prompt=False)
