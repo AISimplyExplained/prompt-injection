@@ -35,7 +35,7 @@ class Message(BaseModel):
 class ChatCompletionRequest(BaseModel):
     model: Optional[str] = "mock-gpt-model"
     messages: List[Message]
-    max_tokens: Optional[int] = 512
+    max_tokens: Optional[int] = 768
     temperature: Optional[float] = 0.1
     stream: Optional[bool] = False
 
@@ -47,7 +47,7 @@ def get_completion(prompt):
     data = {
         "model": "vicgalle/Unsafe-Llama-3-8B",
         "prompt": prompt,
-        "max_tokens": 128,
+        "max_tokens": 768,
         "temperature": 0
     }
 
